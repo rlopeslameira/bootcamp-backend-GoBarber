@@ -17,10 +17,6 @@ class User extends Model {
       }
     );
 
-    /*
-     Antes de saltar o registro ele verifica se tem o password informado
-     se tiver faz a cryptografia do mesmo.
-    */
     this.addHook('beforeSave', async user => {
       if (user.password) {
         user.password_hash = await bcrypt.hash(user.password, 8);
@@ -30,10 +26,10 @@ class User extends Model {
     return this;
   }
 
-  /*
-     Função para comparar a senha informada pelo usuário com a do banco
-     de dados.
-  */
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
+  }
+
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }

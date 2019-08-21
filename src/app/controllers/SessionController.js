@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 import * as Yup from 'yup';
 
-import User from '../models/Users';
+import User from '../models/User';
 
 import authConfig from '../../config/auth';
 
@@ -19,7 +19,7 @@ class SessionController {
       return res.status(400).json({ error: authConfig.validateMessage });
     }
 
-    const { email, senha } = req.body;
+    const { email, password } = req.body;
 
     const user = await User.findOne({
       where: {
@@ -33,7 +33,7 @@ class SessionController {
 
     // console.log(id);
 
-    if (!(await user.checkPassword(senha))) {
+    if (!(await user.checkPassword(password))) {
       return res.status(401).json({ error: 'Password does not match.' });
     }
 
