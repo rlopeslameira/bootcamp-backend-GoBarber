@@ -1,8 +1,0 @@
-
-// GERAÇÃO AUTOMÁTOCA DOS MODELS
-npm install -g sequelize-auto
-npm install -g mysql
-
-sequelize-auto -o "./src/app/models" -d maisescolaweb21 -h mysql.maisescolaweb.com.br -u maisescolaweb21 -p 3306 -x drconsultoria -e mysql
-
-
