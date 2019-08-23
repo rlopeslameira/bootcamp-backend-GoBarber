@@ -1,7 +1,8 @@
 {
-  "name": "gobarber",
+  "name": "meetapp",
   "version": "1.0.0",
   "main": "src/server.js",
+  "author": "Rodrigo Lopes <rlopeslameira@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",

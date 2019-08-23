@@ -1,2 +1,2 @@
-# bootcamp-backend-gobarber
-Bootcamp Rocketseat - Backend do GoBarber
+# bootcamp-backend-meetapp
+Bootcamp Rocketseat - Backend do MeetApp
