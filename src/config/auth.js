@@ -1,5 +1,5 @@
 export default {
-  secret: 'a1c12b43d32f2438993e65560729c575',
+  secret: process.env.APP_SECRET,
   expireIn: '7d',
   validateMessage: 'Dados inválidos',
 };
